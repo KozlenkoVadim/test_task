@@ -2,15 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'dart:math';
 
- class ColorsGenerator {
-  static Color toGenerateRandomColor() {
+class ColorsGenerator {
+  int r = 255, g = 255, b = 255;
+
+  ColorsGenerator();
+
+  Color toGenerateRootColor() {
+    Color color = Color.fromRGBO(r, g, b, 1.0);
+    return color;
+  }
+
+  Color toGenerateRandomColor() {
     Color color = Colors.amber;
     Random red = Random();
-    int r = red.nextInt(257);
+    r = red.nextInt(257);
     Random green = Random();
-    int g = red.nextInt(257);
+    g = green.nextInt(257);
     Random blue = Random();
-    int b = red.nextInt(257);
+    b = blue.nextInt(257);
     color = Color.fromRGBO(r, g, b, 1.0);
 
     return color;

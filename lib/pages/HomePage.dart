@@ -10,11 +10,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Color _backgroundColor = Colors.white;
+  Color _backgroundColor = ColorsGenerator().toGenerateRootColor();
 
   void _changeBackgroundColor() {
     setState(() {
-      _backgroundColor = ColorsGenerator.toGenerateRandomColor();
+      _backgroundColor = ColorsGenerator().toGenerateRandomColor();
     });
   }
 
